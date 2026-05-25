@@ -1,22 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 36" fill="none">
-  <!-- Noir background -->
   <rect width="150" height="36" rx="4" fill="#0D0D0D"/>
-  <!-- Teal frame -->
   <rect x="0.5" y="0.5" width="149" height="35" rx="3.5" stroke="#3A8B8C" stroke-width="1" stroke-opacity="0.4" fill="none"/>
-
-  <!-- Wave 1 -->
   <path d="M 5,9.5 C 7.5,6.5 10.5,6.5 13,9.5 C 15.5,12.5 18.5,12.5 21,9.5 C 23.5,6.5 26.5,6.5 29,9.5" stroke="#E8B830" stroke-width="3.5" stroke-linecap="round"/>
-  <!-- Wave 2 -->
   <path d="M 7,16.5 C 9,14 11,14 13.5,16.5 C 16,19 18.5,19 21,16.5 C 23.5,14 25,14 27,16.5" stroke="#E8B830" stroke-width="3.5" stroke-linecap="round"/>
-  <!-- Wave 3 -->
   <path d="M 5,23.5 C 7.5,20.5 10,20.5 13,23.5 C 15.5,26.5 18,26.5 20.5,23.5 C 23,20.5 25,20.5 26,23.5" stroke="#E8B830" stroke-width="3.5" stroke-linecap="round"/>
-  <!-- Red diamond -->
-  <polygon points="29,21.5 31,23.5 29,25.5 27,23.5" fill="#D44B3A"/>
-
-  <!-- Wordmark -->
   <text x="42" y="14" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" letter-spacing="0.04em" fill="#E8B830">lllm</text>
   <text x="78" y="24" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="9.5" letter-spacing="0.06em" fill="#3A8B8C">.dev</text>
-
-  <!-- Diagonal slash -->
-  <line x1="150" y1="0" x2="142" y2="8" stroke="#D44B3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="150" y1="0" x2="142" y2="8" stroke="#D44B3A" stroke-width="1.5" opacity="0.3"/>
 </svg>

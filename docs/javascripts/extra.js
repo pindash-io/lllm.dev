@@ -38,7 +38,6 @@
     const scheme = theme || document.body.getAttribute('data-md-color-scheme');
     const isDark = scheme !== 'default';
     const gold = isDark ? '#E8B830' : '#C4961A';
-    const red  = '#D44B3A';
 
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('viewBox', '0 0 32 32');
@@ -65,11 +64,7 @@
       svg.appendChild(path);
     });
 
-    // Red diamond (Red Tail)
-    const diamond = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    diamond.setAttribute('points', '27,21 29,23 27,25 25,23');
-    diamond.setAttribute('fill', red);
-    svg.appendChild(diamond);
+
 
     const old = logo.querySelector('svg');
     if (old) old.replaceWith(svg);
