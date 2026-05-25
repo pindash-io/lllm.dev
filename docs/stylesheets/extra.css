@@ -115,14 +115,15 @@ body {
 }
 
 .md-content a:not(.md-button):not(.md-logo):not(.md-nav__link):not(.md-tabs__link) {
-  color: var(--md-primary-fg-color);
+  color: var(--md-accent-fg-color);
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  transition: border-color .15s, color .15s;
+  transition: border-color .25s ease, color .25s ease;
 }
 
 .md-content a:not(.md-button):not(.md-logo):not(.md-nav__link):not(.md-tabs__link):hover {
-  border-bottom-color: var(--md-primary-fg-color);
+  color: var(--md-accent-fg-color);
+  border-bottom-color: var(--md-accent-fg-color);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -255,15 +256,16 @@ body {
 }
 
 .grid.cards a {
-  color: var(--md-primary-fg-color);
+  color: var(--md-accent-fg-color);
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  transition: border-color .25s, color .25s;
+  transition: border-color .25s ease, color .25s ease;
   font-size: .8125rem;
 }
 
 .grid.cards a:hover {
-  border-bottom-color: var(--md-primary-fg-color);
+  color: var(--md-accent-fg-color);
+  border-bottom-color: var(--md-accent-fg-color);
 }
 
 /* ═══════════════════════════════════════════════════════
