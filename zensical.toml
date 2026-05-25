@@ -34,10 +34,6 @@ ratings = [
   { icon = "material/emoticon-sad-outline",   name = "Sad" },
 ]
 
-[[project.extra.social]]
-icon = "fontawesome/brands/github"
-link = "https://github.com/pindash-io/lllm.dev"
-
 [project.plugins]
   [project.plugins.search]
   [project.plugins.sitemap]
@@ -85,10 +81,6 @@ primary = "indigo"
 accent = "indigo"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to dark mode"
-
-[[project.extra.social]]
-icon = "fontawesome/brands/github"
-link = "https://github.com/pindash-io/lllm.dev"
 
 [project.markdown_extensions.abbr]
 [project.markdown_extensions.admonition]
