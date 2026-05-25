@@ -32,8 +32,36 @@
     }
   }
 
+  function brand() {
+    const logo = document.querySelector('.md-logo');
+    if (!logo) return;
+    // Wait for MkDocs to render the icon, then swap
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      const old = logo.querySelector('svg');
+      if (!old) return;
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 32 32');
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('width', '24');
+      svg.setAttribute('height', '24');
+      [
+        { el: 'rect', a: { x:'3', y:'5', width:'24', height:'6', rx:'3' } },
+        { el: 'rect', a: { x:'3', y:'14', width:'20', height:'6', rx:'3' } },
+        { el: 'rect', a: { x:'3', y:'23', width:'24', height:'6', rx:'3' } },
+        { el: 'circle', a: { cx:'28', cy:'26', r:'3' } },
+      ].forEach(({ el, a }) => {
+        const node = document.createElementNS('http://www.w3.org/2000/svg', el);
+        Object.entries(a).forEach(([k, v]) => node.setAttribute(k, v));
+        node.setAttribute('fill', 'currentColor');
+        svg.appendChild(node);
+      });
+      old.replaceWith(svg);
+    }));
+  }
+
   function setup() {
     harden();
+    brand();
 
     // Mark elements to animate
     const selectors = [
