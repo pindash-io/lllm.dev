@@ -145,16 +145,24 @@ Check key CSS properties are applied:
 - `.reveal` class count and `.is-visible` count
 - Dark mode: `document.documentElement.setAttribute("data-md-color-scheme","slate")`
 
-## 9. File Syncing
+## 8. Version Control
 
-After editing source files, always run `zensical build` to sync `docs/` → `site/`.
-Verify with:
+Use **[Jujutsu](https://jj-vcs.github.io/)** (`jj`) for all version control operations.
+
+### Commit
 ```bash
-diff docs/stylesheets/extra.css site/stylesheets/extra.css
+jj commit -m "type(scope): summary"
 ```
-md-color-scheme","slate")`
+Follow Conventional Commits: `feat`, `fix`, `docs`, `chore`, `refactor`.
 
-## 8. File Syncing
+### Push
+```bash
+jj git push
+```
+
+**Never** use raw `git commit` or `git push` — always use `jj`.
+
+## 9. File Syncing
 
 After editing source files, always run `zensical build` to sync `docs/` → `site/`.
 Verify with:
