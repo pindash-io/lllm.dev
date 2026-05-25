@@ -51,7 +51,7 @@
   --md-footer-bg-color:              #f9f9fb;
   --md-footer-bg-color--dark:        #f3f4f6;
   --md-footer-fg-color:              #4b5563;
-  --md-footer-fg-color--light:       #6b7280;
+  --md-footer-fg-color--light:       #535b67;
 }
 
 /* ── Typography ─────────────────────────────────── */
@@ -61,6 +61,15 @@ html {
 
 body {
   font-size: 0.625rem;
+}
+
+/* Font loading: swap to unblock render */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('Inter');
 }
 
 .md-typeset {
@@ -94,6 +103,18 @@ body {
 /* ═══════════════════════════════════════════════════════
    Layout
    ═══════════════════════════════════════════════════════ */
+
+/* Spacing rhythm */
+.md-typeset h2 + h3 {
+  margin-top: 1.5rem;
+}
+
+.md-typeset hr {
+  height: 1px;
+  border: none;
+  background: var(--md-default-fg-color--lightest);
+  margin: 3rem 0;
+}
 
 .md-header,
 .md-tabs {
@@ -416,13 +437,6 @@ body {
    Misc
    ═══════════════════════════════════════════════════════ */
 
-.md-typeset hr {
-  height: 1px;
-  border: none;
-  background: var(--md-default-fg-color--lightest);
-  margin: 3rem 0;
-}
-
 .md-header__title {
   font-weight: 500;
 }
@@ -437,19 +451,32 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
-   Reveal animations
+   Reveal animations (powered by transitions.dev panel-reveal)
    ═══════════════════════════════════════════════════════ */
+
+:root {
+  --panel-open-dur: 400ms;
+  --panel-translate-y: 16px;
+  --panel-blur: 2px;
+  --panel-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 @media (prefers-reduced-motion: no-preference) {
   html.js .reveal {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity .7s ease, transform .7s ease !important;
+    transform: translateY(var(--panel-translate-y));
+    filter: blur(var(--panel-blur));
+    transition:
+      transform var(--panel-open-dur) var(--panel-ease),
+      opacity   var(--panel-open-dur) var(--panel-ease),
+      filter    var(--panel-open-dur) var(--panel-ease);
     transition-delay: var(--reveal-delay, 0s);
+    will-change: transform, opacity, filter;
   }
 
   html.js .reveal.is-visible {
     opacity: 1;
     transform: none;
+    filter: blur(0);
   }
 }

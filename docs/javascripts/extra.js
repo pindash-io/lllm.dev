@@ -5,12 +5,41 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
   }
 
+  function harden() {
+    // ARIA: label buttons missing accessible names
+    const searchBtn = document.querySelector('.md-search__button[aria-label="Search"]');
+    if (searchBtn && !searchBtn.hasAttribute('aria-label')) {
+      searchBtn.setAttribute('aria-label', 'Open search');
+    }
+
+    const backToTop = document.querySelector('.md-top');
+    if (backToTop && !backToTop.hasAttribute('aria-label')) {
+      backToTop.setAttribute('aria-label', 'Back to top');
+    }
+
+    // ARIA: patch search combobox with required attributes
+    const searchInput = document.querySelector('.md-search__input');
+    if (searchInput && searchInput.getAttribute('role') === 'combobox') {
+      if (!searchInput.hasAttribute('aria-expanded')) {
+        searchInput.setAttribute('aria-expanded', 'false');
+      }
+      const results = document.querySelector('.md-search-result__list');
+      if (results && !searchInput.hasAttribute('aria-controls')) {
+        const id = results.id || 'md-search-results';
+        results.id = id;
+        searchInput.setAttribute('aria-controls', id);
+      }
+    }
+  }
+
   function setup() {
+    harden();
+
     // Mark elements to animate
     const selectors = [
       '.hero-subtitle', '.hero-actions',
       '.grid.cards li', 'h2', '.md-typeset hr',
-      '.md-typeset pre', '.md-typeset table:not([class])',
+      '.md-typeset pre', '.md-typeset table',
       '.md-content > .md-button',
     ];
     selectors.forEach(sel => {
