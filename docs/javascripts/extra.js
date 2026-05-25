@@ -45,14 +45,14 @@
     svg.setAttribute('width', '24');
     svg.setAttribute('height', '24');
 
-    // Three M-waves (Bebop curves)
+    // Three natural waves — organic, varied rhythm
     const waves = [
-      // Wave 1: full width, two peaks
-      'M 3,8.5 C 5.5,5.5 8.5,5.5 11,8.5 C 13.5,11.5 16.5,11.5 19,8.5 C 21.5,5.5 24.5,5.5 27,8.5',
-      // Wave 2: shorter, asymmetric indent
-      'M 5,16 C 7.5,13 10,13 12.5,16 C 15,19 17.5,19 20,16 C 22.5,13 24,13 25,16',
-      // Wave 3: ends before diamond
-      'M 3,23 C 5.5,20 8,20 11,23 C 13.5,26 16,26 18.5,23 C 21,20 23,20 24,23',
+      // Wave 1: gentle rise, sharper fall, varied peaks
+      'M 3,8.5 C 4.5,6 6.5,5.5 8,7.5 C 9.5,9.5 11,10.5 13,8.5 C 15,6 17,5 19,7 C 21,9 23,10.5 25,8.5 C 26,7 27,7.5 27,8.5',
+      // Wave 2: shorter, lazier shape, offset phase
+      'M 5,16 C 6.5,14 8,13.5 9.5,15.5 C 11,17.5 13,18.5 15,16 C 16.5,14 18,13 19.5,15.5 C 21,18 22.5,18.5 25,16',
+      // Wave 3: rolling rhythm, asymmetric finish
+      'M 3,23 C 4.5,21 6,20.5 7.5,22.5 C 9.5,24.5 11,25 13,22.5 C 14.5,20.5 16,20 18,22.5 C 19.5,24.5 21,25 24,23',
     ];
     waves.forEach(d => {
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
