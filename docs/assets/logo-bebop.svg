@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 36" fill="none">
+  <!-- Noir background -->
+  <rect width="150" height="36" rx="4" fill="#0D0D0D"/>
+
+  <!-- Thin teal frame border -->
+  <rect x="0.5" y="0.5" width="149" height="35" rx="3.5" stroke="#3A8B8C" stroke-width="1" stroke-opacity="0.4" fill="none"/>
+
+  <!-- Icon mark -->
+  <rect x="4" y="7" width="22" height="4.5" fill="#E8B830"/>
+  <rect x="6" y="14" width="18" height="4.5" fill="#E8B830"/>
+  <rect x="4" y="21" width="20" height="4.5" fill="#E8B830"/>
+  <polygon points="25,21.5 27,23.75 25,26 23,23.75" fill="#D44B3A"/>
+
+  <!-- Wordmark: bold gold, sharp spacing -->
+  <text x="40" y="14" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" letter-spacing="0.04em" fill="#E8B830">lllm</text>
+  <!-- .dev in muted teal -->
+  <text x="78" y="24" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="9.5" letter-spacing="0.06em" fill="#3A8B8C">.dev</text>
+
+  <!-- Diagonal slash accent (Bebop split-screen motif) -->
+  <line x1="150" y1="0" x2="142" y2="8" stroke="#D44B3A" stroke-width="1.5" opacity="0.6"/>
+</svg>

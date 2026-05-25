@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Noir background -->
+  <rect width="40" height="40" rx="5" fill="#0D0D0D"/>
+
+  <!-- Teal frame (Swordfish cockpit HUD) -->
+  <rect x="1" y="1" width="38" height="38" rx="4" stroke="#3A8B8C" stroke-width="1" stroke-opacity="0.5" fill="none"/>
+
+  <!-- Bar 1: gold -->
+  <rect x="5" y="9" width="28" height="5.5" fill="#E8B830"/>
+  <!-- Bar 2: shorter -->
+  <rect x="7" y="17" width="24" height="5.5" fill="#E8B830"/>
+  <!-- Bar 3 -->
+  <rect x="5" y="25" width="26" height="5.5" fill="#E8B830"/>
+
+  <!-- Red diamond dot -->
+  <polygon points="32,26 34.5,28 32,30 29.5,28" fill="#D44B3A"/>
+
+  <!-- Top chevron accent -->
+  <polygon points="20,0 22.5,3 17.5,3" fill="#D44B3A" opacity="0.7"/>
+</svg>

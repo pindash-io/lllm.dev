@@ -32,36 +32,54 @@
     }
   }
 
-  function brand() {
+  function brand(theme) {
     const logo = document.querySelector('.md-logo');
     if (!logo) return;
-    // Wait for MkDocs to render the icon, then swap
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      const old = logo.querySelector('svg');
-      if (!old) return;
-      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      svg.setAttribute('viewBox', '0 0 32 32');
-      svg.setAttribute('fill', 'none');
-      svg.setAttribute('width', '24');
-      svg.setAttribute('height', '24');
-      [
-        { el: 'rect', a: { x:'3', y:'5', width:'24', height:'6', rx:'3' } },
-        { el: 'rect', a: { x:'3', y:'14', width:'20', height:'6', rx:'3' } },
-        { el: 'rect', a: { x:'3', y:'23', width:'24', height:'6', rx:'3' } },
-        { el: 'circle', a: { cx:'28', cy:'26', r:'3' } },
-      ].forEach(({ el, a }) => {
-        const node = document.createElementNS('http://www.w3.org/2000/svg', el);
-        Object.entries(a).forEach(([k, v]) => node.setAttribute(k, v));
-        node.setAttribute('fill', 'currentColor');
-        svg.appendChild(node);
-      });
-      old.replaceWith(svg);
-    }));
+    const scheme = theme || document.body.getAttribute('data-md-color-scheme');
+    const isDark = scheme !== 'default';
+    const gold = isDark ? '#E8B830' : '#C4961A';
+    const red  = '#D44B3A';
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 32 32');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('width', '24');
+    svg.setAttribute('height', '24');
+
+    // Angular bars (no rounded corners — Bebop edge)
+    [
+      { el: 'rect', a: { x:'3', y:'6', width:'24', height:'5' }, fill: gold },
+      { el: 'rect', a: { x:'5', y:'13.5', width:'20', height:'5' }, fill: gold },
+      { el: 'rect', a: { x:'3', y:'21', width:'22', height:'5' }, fill: gold },
+      // Diamond dot (Red Tail)
+      { el: 'polygon', a: { points:'28,23 30,26 28,29 26,26' }, fill: red },
+    ].forEach(({ el, a, fill }) => {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', el);
+      Object.entries(a).forEach(([k, v]) => node.setAttribute(k, v));
+      node.setAttribute('fill', fill);
+      svg.appendChild(node);
+    });
+
+    const old = logo.querySelector('svg');
+    if (old) old.replaceWith(svg);
+    else logo.appendChild(svg);
+  }
+
+  function brandInit() {
+    requestAnimationFrame(() => requestAnimationFrame(() => brand()));
+    // Watch for theme toggles
+    new MutationObserver(mutations => {
+      for (const m of mutations) {
+        if (m.attributeName === 'data-md-color-scheme') {
+          brand(document.body.getAttribute('data-md-color-scheme'));
+        }
+      }
+    }).observe(document.body, { attributes: true, attributeFilter: ['data-md-color-scheme'] });
   }
 
   function setup() {
     harden();
-    brand();
+    brandInit();
 
     // Mark elements to animate
     const selectors = [
