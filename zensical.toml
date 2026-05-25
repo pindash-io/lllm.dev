@@ -15,6 +15,7 @@ nav = [
   { Guides = [
     { "Getting Started"  = "guides/getting-started.md" },
     { "Running Models"   = "guides/running-models.md" },
+    { "Hardware"         = "guides/hardware.md" },
     { "Fine-Tuning"      = "guides/fine-tuning.md" },
   ]},
   { News = [
