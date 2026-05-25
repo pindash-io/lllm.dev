@@ -46,19 +46,30 @@
     svg.setAttribute('width', '24');
     svg.setAttribute('height', '24');
 
-    // Angular bars (no rounded corners — Bebop edge)
-    [
-      { el: 'rect', a: { x:'3', y:'6', width:'24', height:'5' }, fill: gold },
-      { el: 'rect', a: { x:'5', y:'13.5', width:'20', height:'5' }, fill: gold },
-      { el: 'rect', a: { x:'3', y:'21', width:'22', height:'5' }, fill: gold },
-      // Diamond dot (Red Tail)
-      { el: 'polygon', a: { points:'28,23 30,26 28,29 26,26' }, fill: red },
-    ].forEach(({ el, a, fill }) => {
-      const node = document.createElementNS('http://www.w3.org/2000/svg', el);
-      Object.entries(a).forEach(([k, v]) => node.setAttribute(k, v));
-      node.setAttribute('fill', fill);
-      svg.appendChild(node);
+    // Three M-waves (Bebop curves)
+    const waves = [
+      // Wave 1: full width, two peaks
+      'M 3,8.5 C 5.5,5.5 8.5,5.5 11,8.5 C 13.5,11.5 16.5,11.5 19,8.5 C 21.5,5.5 24.5,5.5 27,8.5',
+      // Wave 2: shorter, asymmetric indent
+      'M 5,16 C 7.5,13 10,13 12.5,16 C 15,19 17.5,19 20,16 C 22.5,13 24,13 25,16',
+      // Wave 3: ends before diamond
+      'M 3,23 C 5.5,20 8,20 11,23 C 13.5,26 16,26 18.5,23 C 21,20 23,20 24,23',
+    ];
+    waves.forEach(d => {
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', d);
+      path.setAttribute('stroke', gold);
+      path.setAttribute('stroke-width', '4');
+      path.setAttribute('stroke-linecap', 'round');
+      path.setAttribute('fill', 'none');
+      svg.appendChild(path);
     });
+
+    // Red diamond (Red Tail)
+    const diamond = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    diamond.setAttribute('points', '27,21 29,23 27,25 25,23');
+    diamond.setAttribute('fill', red);
+    svg.appendChild(diamond);
 
     const old = logo.querySelector('svg');
     if (old) old.replaceWith(svg);

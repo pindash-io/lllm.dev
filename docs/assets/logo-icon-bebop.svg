@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Bar 1 -->
-  <rect x="3" y="6" width="24" height="5" fill="#C4961A"/>
-  <!-- Bar 2 (shorter, asymmetric) -->
-  <rect x="5" y="13.5" width="20" height="5" fill="#C4961A"/>
-  <!-- Bar 3 -->
-  <rect x="3" y="21" width="22" height="5" fill="#C4961A"/>
-  <!-- Red diamond (Spike's Red Tail) -->
-  <polygon points="28,23 30,26 28,29 26,26" fill="#D44B3A"/>
+  <!-- Wave 1 -->
+  <path d="M 3,8.5 C 5.5,5.5 8.5,5.5 11,8.5 C 13.5,11.5 16.5,11.5 19,8.5 C 21.5,5.5 24.5,5.5 27,8.5" stroke="#C4961A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Wave 2 -->
+  <path d="M 5,16 C 7.5,13 10,13 12.5,16 C 15,19 17.5,19 20,16 C 22.5,13 24,13 25,16" stroke="#C4961A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Wave 3 -->
+  <path d="M 3,23 C 5.5,20 8,20 11,23 C 13.5,26 16,26 18.5,23 C 21,20 23,20 24,23" stroke="#C4961A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Red diamond -->
+  <polygon points="27,21 29,23 27,25 25,23" fill="#D44B3A"/>
 </svg>
