@@ -1,6 +1,15 @@
 (() => {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Replace favicon with custom SVG
+  (function favicon() {
+    const link = document.querySelector('link[rel="icon"]');
+    if (link) {
+      link.href = '/assets/images/favicon.svg';
+      link.type = 'image/svg+xml';
+    }
+  })();
+
   function revealAll() {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
   }
