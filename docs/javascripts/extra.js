@@ -78,7 +78,7 @@
 
       // M chart line
       const mLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      mLine.setAttribute('d', 'M 7,20 L 10,14 L 13,20 L 16,14 L 19,20 L 22,14 L 25,20');
+      mLine.setAttribute('d', 'M 7,20 L 12,14 L 17,20 L 22,14 L 27,20');
       mLine.setAttribute('stroke', gold);
       mLine.setAttribute('stroke-width', '1.5');
       mLine.setAttribute('fill', 'none');
