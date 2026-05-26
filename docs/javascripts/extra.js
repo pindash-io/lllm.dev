@@ -70,7 +70,7 @@
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', d);
         path.setAttribute('stroke', gold);
-        path.setAttribute('stroke-width', '4');
+        path.setAttribute('stroke-width', '2.5');
         path.setAttribute('stroke-linecap', 'round');
         path.setAttribute('stroke-dasharray', '6 4');
         svg.appendChild(path);
