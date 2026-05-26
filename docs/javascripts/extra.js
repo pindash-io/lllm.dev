@@ -51,24 +51,28 @@
     const gold = isDark ? '#F5F5F5' : '#1A1A1A';
 
     document.querySelectorAll('.md-logo').forEach(logo => {
-      // Remove any stray lucide icons
       logo.querySelectorAll('svg:not([data-custom-logo])').forEach(s => s.remove());
       if (logo.querySelector('svg[data-custom-logo]')) return;
 
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      svg.setAttribute('viewBox', '0 0 32 32');
-      svg.setAttribute('fill', 'none');
+      svg.setAttribute('viewBox', '0 0 16 16');
       svg.setAttribute('width', '24');
       svg.setAttribute('height', '24');
+      svg.setAttribute('shape-rendering', 'crispEdges');
       svg.setAttribute('data-custom-logo', '');
 
-      // Blocky bars (pi.dev style — geometric, no curves)
-      const bars = [
-        { x:'3', y:'6', w:'24', h:'5' },
-        { x:'5', y:'13.5', w:'20', h:'5' },
-        { x:'3', y:'21', w:'22', h:'5' },
+      // Pixel grid (each unit = 1px in 16×16)
+      const pixels = [
+        // Bar 1 (y:1-2, x:1-14)
+        { x:1, y:1, w:14, h:2 },
+        // Bar 2 (y:5-6, x:3-12, indented)
+        { x:3, y:5, w:10, h:2 },
+        // Bar 3 (y:9-10, x:1-12)
+        { x:1, y:9, w:12, h:2 },
+        // Dot (2×2 at x:13, y:13)
+        { x:13, y:13, w:2, h:2 },
       ];
-      bars.forEach(({ x, y, w, h }) => {
+      pixels.forEach(({ x, y, w, h }) => {
         const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
         rect.setAttribute('x', x);
         rect.setAttribute('y', y);
@@ -77,14 +81,7 @@
         rect.setAttribute('fill', gold);
         svg.appendChild(rect);
       });
-      // Square dot
-      const dot = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      dot.setAttribute('x', '26');
-      dot.setAttribute('y', '23');
-      dot.setAttribute('width', '4');
-      dot.setAttribute('height', '4');
-      dot.setAttribute('fill', gold);
-      svg.appendChild(dot);
+      logo.appendChild(svg);
       logo.appendChild(svg);
     });
   }
