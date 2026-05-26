@@ -60,43 +60,36 @@
       svg.setAttribute('height', '24');
       svg.setAttribute('data-custom-logo', '');
 
-      const axis = (ox, oy, len, ticks) => {
-        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        g.setAttribute('stroke', gold);
-        g.setAttribute('stroke-width', '1');
-        g.setAttribute('fill', 'none');
-        // Y-axis
-        const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        yAxis.setAttribute('x1', ox); yAxis.setAttribute('y1', oy);
-        yAxis.setAttribute('x2', ox); yAxis.setAttribute('y2', oy + len);
-        g.appendChild(yAxis);
-        // X-axis
-        const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        xAxis.setAttribute('x1', ox); xAxis.setAttribute('y1', oy + len);
-        xAxis.setAttribute('x2', ox + len + 6); xAxis.setAttribute('y2', oy + len);
-        g.appendChild(xAxis);
-        // Tick marks
-        ticks.forEach(t => {
-          const tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-          tick.setAttribute('x1', ox + t); tick.setAttribute('y1', oy + len - 1);
-          tick.setAttribute('x2', ox + t); tick.setAttribute('y2', oy + len + 1);
-          g.appendChild(tick);
-        });
-        return g;
-      };
+      // Single coordinate system with M chart line
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.setAttribute('stroke', gold);
+      g.setAttribute('stroke-width', '1');
+      g.setAttribute('fill', 'none');
 
-      // Layer 1 — top
-      svg.appendChild(axis(3, 2, 6, [3, 6, 9, 12, 15, 18]));
-      // Layer 2 — middle, offset right
-      svg.appendChild(axis(5, 10, 6, [2, 5, 8, 11, 14]));
-      // Layer 3 — bottom
-      svg.appendChild(axis(3, 18, 6, [3, 6, 9, 12, 15]));
+      // Y-axis
+      const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      yAxis.setAttribute('x1', '3'); yAxis.setAttribute('y1', '8');
+      yAxis.setAttribute('x2', '3'); yAxis.setAttribute('y2', '26');
+      g.appendChild(yAxis);
+      // X-axis
+      const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      xAxis.setAttribute('x1', '3'); xAxis.setAttribute('y1', '26');
+      xAxis.setAttribute('x2', '29'); xAxis.setAttribute('y2', '26');
+      g.appendChild(xAxis);
+      // Ticks
+      [6,9,12,15,18,21,24].forEach(t => {
+        const tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        tick.setAttribute('x1', t); tick.setAttribute('y1', '25');
+        tick.setAttribute('x2', t); tick.setAttribute('y2', '27');
+        g.appendChild(tick);
+      });
+      svg.appendChild(g);
 
-      // M chart line in bottom coordinate system
+      // M chart line
       const mLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      mLine.setAttribute('d', 'M 7,21 L 10,18 L 13,21 L 16,18 L 19,21 L 22,18');
+      mLine.setAttribute('d', 'M 7,20 L 10,14 L 13,20 L 16,14 L 19,20 L 22,14 L 25,20');
       mLine.setAttribute('stroke', gold);
-      mLine.setAttribute('stroke-width', '1.2');
+      mLine.setAttribute('stroke-width', '1.5');
       mLine.setAttribute('fill', 'none');
       mLine.setAttribute('stroke-linejoin', 'round');
       svg.appendChild(mLine);
