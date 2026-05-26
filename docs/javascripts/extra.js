@@ -48,7 +48,7 @@
   function brand(theme) {
     const scheme = theme || document.body.getAttribute('data-md-color-scheme');
     const isDark = scheme !== 'default';
-    const gold = isDark ? '#E8B830' : '#8A6808';
+    const gold = isDark ? '#F5F5F5' : '#1A1A1A';
 
     document.querySelectorAll('.md-logo').forEach(logo => {
       // Remove any stray lucide icons
