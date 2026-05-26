@@ -1,10 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 36" fill="none">
-  <rect width="150" height="36" rx="4" fill="#0D0D0D"/>
-  <rect x="0.5" y="0.5" width="149" height="35" rx="3.5" stroke="#3A8B8C" stroke-width="1" stroke-opacity="0.4" fill="none"/>
-  <path d="M 5,9.5 C 6.5,7 8.5,6.5 10,8.5 C 12,10.5 13.5,11.5 15.5,9.5 C 17.5,7 19.5,6 21.5,8 C 24,10 26,11.5 28,9.5 C 29,8 29.5,8.5 29,9.5" stroke="#E8B830" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="M 7,16.5 C 8.5,14.5 10,14 11.5,16 C 13,18 15,19 17,16.5 C 18.5,14.5 20,13.5 22,16 C 24,18.5 25,19 27,16.5" stroke="#E8B830" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="M 5,23.5 C 6.5,21.5 8,20.5 9.5,22.5 C 11.5,24.5 13.5,25.5 15.5,22.5 C 17,20 18.5,19.5 20.5,22.5 C 22,25 23.5,25.5 26,23.5" stroke="#E8B830" stroke-width="3.5" stroke-linecap="round"/>
-  <text x="42" y="14" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="16" letter-spacing="0.04em" fill="#E8B830">lllm</text>
-  <text x="78" y="24" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="9.5" letter-spacing="0.06em" fill="#3A8B8C">.dev</text>
-  <line x1="150" y1="0" x2="142" y2="8" stroke="#D44B3A" stroke-width="1.5" opacity="0.3"/>
+  <rect width="150" height="36" rx="4" fill="#0A0A0A"/>
+  <path d="M 5,9.5 C 6.5,7 8.5,6.5 10,8.5 C 12,10.5 13.5,11.5 15.5,9.5 C 17.5,7 19.5,6 21.5,8 C 24,10 26,11.5 28,9.5 C 29,8 29.5,8.5 29,9.5" stroke="#F5F5F5" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 7,16.5 C 8.5,14.5 10,14 11.5,16 C 13,18 15,19 17,16.5 C 18.5,14.5 20,13.5 22,16 C 24,18.5 25,19 27,16.5" stroke="#F5F5F5" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 5,23.5 C 6.5,21.5 8,20.5 9.5,22.5 C 11.5,24.5 13.5,25.5 15.5,22.5 C 17,20 18.5,19.5 20.5,22.5 C 22,25 23.5,25.5 26,23.5" stroke="#F5F5F5" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="42" y="14" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="16" letter-spacing="-0.02em" fill="#F5F5F5">lllm</text>
+  <text x="78" y="24" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="9.5" letter-spacing="0.02em" fill="#787878">.dev</text>
 </svg>
