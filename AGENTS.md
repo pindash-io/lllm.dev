@@ -15,6 +15,17 @@ zensical serve          # build + dev server (preferred)
 
 After editing files, always run `zensical build`. Never use `python3 -m http.server` or `npx serve`.
 
+## Browser Debugging
+
+Use the **web-browser** skill to inspect the site. Never `pkill -9 chrome` — it kills all tabs and user sessions. If Chrome is unresponsive, start a **new profile** instead:
+
+```bash
+cd web-browser-skill/scripts
+node scripts/start.js              # fresh profile on :9222
+# or
+node scripts/start.js --profile   # copy your profile into isolated cache
+```
+
 ## Files
 
 | What | Where |
