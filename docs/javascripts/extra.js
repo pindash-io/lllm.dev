@@ -60,31 +60,38 @@
       svg.setAttribute('height', '24');
       svg.setAttribute('data-custom-logo', '');
 
-      // Three stacked coordinate systems (middle offset)
-      const axes = [
-        { ox: 3, oy: 4,  len: 5 },   // layer 1 — top
-        { ox: 5, oy: 12, len: 5 },   // layer 2 — offset right
-        { ox: 3, oy: 20, len: 5 },   // layer 3 — bottom
+      // 3D isometric coordinate systems
+      const layers = [
+        { ox: 6,  oy: 4,  ex: 20, ey: 14 },  // layer 1 — back
+        { ox: 8,  oy: 11, ex: 18, ey: 18 },  // layer 2 — middle
+        { ox: 4,  oy: 18, ex: 22, ey: 28 },  // layer 3 — front
       ];
-      axes.forEach(({ ox, oy, len }) => {
+      layers.forEach(({ ox, oy, ex, ey }) => {
         const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         g.setAttribute('stroke', gold);
         g.setAttribute('stroke-width', '1');
         g.setAttribute('fill', 'none');
+        // Y-axis (vertical)
         const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         yAxis.setAttribute('x1', ox); yAxis.setAttribute('y1', oy);
-        yAxis.setAttribute('x2', ox); yAxis.setAttribute('y2', oy + len);
+        yAxis.setAttribute('x2', ox); yAxis.setAttribute('y2', ey);
         g.appendChild(yAxis);
+        // X-axis (diagonal, depth)
         const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        xAxis.setAttribute('x1', ox); xAxis.setAttribute('y1', oy + len);
-        xAxis.setAttribute('x2', ox + 22); xAxis.setAttribute('y2', oy + len);
+        xAxis.setAttribute('x1', ox); xAxis.setAttribute('y1', ey);
+        xAxis.setAttribute('x2', ex); xAxis.setAttribute('y2', ey + 2);
         g.appendChild(xAxis);
+        // Z-axis (diagonal, up-right)
+        const zAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        zAxis.setAttribute('x1', ox); zAxis.setAttribute('y1', ey);
+        zAxis.setAttribute('x2', ex - 8); zAxis.setAttribute('y2', ey - 6);
+        g.appendChild(zAxis);
         svg.appendChild(g);
       });
 
-      // M chart line in bottom coordinate system
+      // M chart line on front layer's XY plane
       const mLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      mLine.setAttribute('d', 'M 7,22 L 12,17 L 17,22 L 22,17 L 27,22');
+      mLine.setAttribute('d', 'M 5,26 L 11,23 L 17,26 L 23,23 L 28,27');
       mLine.setAttribute('stroke', gold);
       mLine.setAttribute('stroke-width', '1.5');
       mLine.setAttribute('fill', 'none');
