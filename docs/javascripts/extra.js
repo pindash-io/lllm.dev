@@ -56,47 +56,26 @@
 
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       svg.setAttribute('viewBox', '0 0 32 32');
+      svg.setAttribute('fill', 'none');
       svg.setAttribute('width', '24');
       svg.setAttribute('height', '24');
       svg.setAttribute('data-custom-logo', '');
 
-      // 3D isometric coordinate systems
-      const layers = [
-        { ox: 6,  oy: 4,  ex: 20, ey: 14 },  // layer 1 — back
-        { ox: 8,  oy: 11, ex: 18, ey: 18 },  // layer 2 — middle
-        { ox: 4,  oy: 18, ex: 22, ey: 28 },  // layer 3 — front
+      const waves = [
+        'M 3,8.5 C 4.5,6 6.5,5.5 8,7.5 C 9.5,9.5 11,10.5 13,8.5 C 15,6 17,5 19,7 C 21,9 23,10.5 25,8.5 C 26,7 27,7.5 27,8.5',
+        'M 5,16 C 6.5,14 8,13.5 9.5,15.5 C 11,17.5 13,18.5 15,16 C 16.5,14 18,13 19.5,15.5 C 21,18 22.5,18.5 25,16',
+        'M 3,23 C 4.5,21 6,20.5 7.5,22.5 C 9.5,24.5 11,25 13,22.5 C 14.5,20.5 16,20 18,22.5 C 19.5,24.5 21,25 24,23',
       ];
-      layers.forEach(({ ox, oy, ex, ey }) => {
-        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        g.setAttribute('stroke', gold);
-        g.setAttribute('stroke-width', '1');
-        g.setAttribute('fill', 'none');
-        // Y-axis (vertical)
-        const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        yAxis.setAttribute('x1', ox); yAxis.setAttribute('y1', oy);
-        yAxis.setAttribute('x2', ox); yAxis.setAttribute('y2', ey);
-        g.appendChild(yAxis);
-        // X-axis (diagonal, depth)
-        const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        xAxis.setAttribute('x1', ox); xAxis.setAttribute('y1', ey);
-        xAxis.setAttribute('x2', ex); xAxis.setAttribute('y2', ey + 2);
-        g.appendChild(xAxis);
-        // Z-axis (diagonal, up-right)
-        const zAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        zAxis.setAttribute('x1', ox); zAxis.setAttribute('y1', ey);
-        zAxis.setAttribute('x2', ex - 8); zAxis.setAttribute('y2', ey - 6);
-        g.appendChild(zAxis);
-        svg.appendChild(g);
+      waves.forEach(d => {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('stroke', gold);
+        path.setAttribute('stroke-width', '4');
+        path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('stroke-dasharray', '6 4');
+        svg.appendChild(path);
       });
-
-      // M chart line on front layer's XY plane
-      const mLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      mLine.setAttribute('d', 'M 5,26 L 11,23 L 17,26 L 23,23 L 28,27');
-      mLine.setAttribute('stroke', gold);
-      mLine.setAttribute('stroke-width', '1.5');
-      mLine.setAttribute('fill', 'none');
-      mLine.setAttribute('stroke-linejoin', 'round');
-      svg.appendChild(mLine);
+      logo.appendChild(svg);
 
       logo.appendChild(svg);
       logo.appendChild(svg);
