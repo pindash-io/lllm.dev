@@ -60,25 +60,31 @@
       svg.setAttribute('height', '24');
       svg.setAttribute('data-custom-logo', '');
 
-      // Single coordinate system — just axes
-      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      g.setAttribute('stroke', gold);
-      g.setAttribute('stroke-width', '1');
-      g.setAttribute('fill', 'none');
+      // Three stacked coordinate systems (middle offset)
+      const axes = [
+        { ox: 3, oy: 4,  len: 5 },   // layer 1 — top
+        { ox: 5, oy: 12, len: 5 },   // layer 2 — offset right
+        { ox: 3, oy: 20, len: 5 },   // layer 3 — bottom
+      ];
+      axes.forEach(({ ox, oy, len }) => {
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        g.setAttribute('stroke', gold);
+        g.setAttribute('stroke-width', '1');
+        g.setAttribute('fill', 'none');
+        const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        yAxis.setAttribute('x1', ox); yAxis.setAttribute('y1', oy);
+        yAxis.setAttribute('x2', ox); yAxis.setAttribute('y2', oy + len);
+        g.appendChild(yAxis);
+        const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        xAxis.setAttribute('x1', ox); xAxis.setAttribute('y1', oy + len);
+        xAxis.setAttribute('x2', ox + 22); xAxis.setAttribute('y2', oy + len);
+        g.appendChild(xAxis);
+        svg.appendChild(g);
+      });
 
-      const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      yAxis.setAttribute('x1', '3'); yAxis.setAttribute('y1', '8');
-      yAxis.setAttribute('x2', '3'); yAxis.setAttribute('y2', '26');
-      g.appendChild(yAxis);
-      const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      xAxis.setAttribute('x1', '3'); xAxis.setAttribute('y1', '26');
-      xAxis.setAttribute('x2', '29'); xAxis.setAttribute('y2', '26');
-      g.appendChild(xAxis);
-      svg.appendChild(g);
-
-      // M chart line
+      // M chart line in bottom coordinate system
       const mLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      mLine.setAttribute('d', 'M 7,20 L 12,14 L 17,20 L 22,14 L 27,20');
+      mLine.setAttribute('d', 'M 7,22 L 12,17 L 17,22 L 22,17 L 27,22');
       mLine.setAttribute('stroke', gold);
       mLine.setAttribute('stroke-width', '1.5');
       mLine.setAttribute('fill', 'none');
