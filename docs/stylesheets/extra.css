@@ -37,12 +37,12 @@
   --md-default-fg-color--light:      #6E6E64;
   --md-default-fg-color--lighter:    #9E9E92;
   --md-default-fg-color--lightest:   #D5D5C8;
-  --md-primary-fg-color:             #B8860B;
-  --md-primary-fg-color--light:      #C4961A;
-  --md-primary-fg-color--dark:       #9E7208;
+  --md-primary-fg-color:             #8A6808;
+  --md-primary-fg-color--light:      #A0780A;
+  --md-primary-fg-color--dark:       #7A5C06;
   --md-primary-bg-color:             #FBFBF7;
   --md-primary-bg-color--light:      #FBFBF7;
-  --md-accent-fg-color:              #B8860B;
+  --md-accent-fg-color:              #8A6808;
   --md-code-bg-color:                #F3F3EC;
   --md-code-fg-color:                #2D2D28;
   --md-typeset-color:                #2D2D28;
@@ -50,8 +50,8 @@
   --md-admonition-bg-color:          #F3F3EC;
   --md-footer-bg-color:              #F3F3EC;
   --md-footer-bg-color--dark:        #EBEBE2;
-  --md-footer-fg-color:              #6E6E64;
-  --md-footer-fg-color--light:       #8E8E84;
+  --md-footer-fg-color:              #58584E;
+  --md-footer-fg-color--light:       #78786E;
 }
 
 /* ── Typography ─────────────────────────────────── */

@@ -15,32 +15,40 @@
   }
 
   function harden() {
-    const searchBtn = document.querySelector('.md-search__button[aria-label="Search"]');
-    if (searchBtn && !searchBtn.hasAttribute('aria-label')) {
-      searchBtn.setAttribute('aria-label', 'Open search');
-    }
+    // Label unlabeled search buttons
+    document.querySelectorAll('.md-search__button:not([aria-label])').forEach(btn => {
+      btn.setAttribute('aria-label', btn.title || 'Search');
+    });
     const backToTop = document.querySelector('.md-top');
     if (backToTop && !backToTop.hasAttribute('aria-label')) {
       backToTop.setAttribute('aria-label', 'Back to top');
     }
+    // Patch search combobox with required ARIA attributes
     const searchInput = document.querySelector('.md-search__input');
     if (searchInput && searchInput.getAttribute('role') === 'combobox') {
       if (!searchInput.hasAttribute('aria-expanded')) {
         searchInput.setAttribute('aria-expanded', 'false');
       }
-      const results = document.querySelector('.md-search-result__list');
-      if (results && !searchInput.hasAttribute('aria-controls')) {
-        const id = results.id || 'md-search-results';
-        results.id = id;
-        searchInput.setAttribute('aria-controls', id);
-      }
+      // Wait for search results element (lazy-loaded)
+      const patch = () => {
+        const results = document.querySelector('.md-search-result__list');
+        if (results) {
+          if (!results.id) results.id = 'md-search-results';
+          if (!searchInput.hasAttribute('aria-controls')) {
+            searchInput.setAttribute('aria-controls', results.id);
+          }
+        }
+      };
+      patch();
+      // Retry once after search panel initialization
+      setTimeout(patch, 500);
     }
   }
 
   function brand(theme) {
     const scheme = theme || document.body.getAttribute('data-md-color-scheme');
     const isDark = scheme !== 'default';
-    const gold = isDark ? '#E8B830' : '#C4961A';
+    const gold = isDark ? '#E8B830' : '#8A6808';
 
     document.querySelectorAll('.md-logo').forEach(logo => {
       // Remove any stray lucide icons
