@@ -11,6 +11,8 @@ date: 2026-05-06
 
 [:fontawesome-brands-github: View on GitHub](https://github.com/antirez/ds4){ .md-button .md-button--primary }
 
+[:simple-huggingface: Quantized GGUF Models](https://huggingface.co/antirez/deepseek-v4-gguf){ .md-button }
+
 ---
 
 ## What is it?
