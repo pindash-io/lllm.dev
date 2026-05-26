@@ -125,6 +125,39 @@ body { font-size: 0.625rem; }
   border-top: 1px solid var(--md-default-fg-color--lightest);
 }
 
+/* ═══════════════════════════════════════════════════════
+   Content tabs
+   ═══════════════════════════════════════════════════════ */
+
+.md-typeset .tabbed-set {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.md-typeset .tabbed-labels {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color--light);
+}
+
+.md-typeset .tabbed-labels > label {
+  color: var(--md-default-fg-color--light);
+  transition: color .2s ease;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset .tabbed-block {
+  border: none;
+}
+
+.md-typeset .tabbed-labels--linked > label,
+.md-typeset .tabbed-content--linked {
+  border-color: var(--md-default-fg-color--lightest);
+}
+
 .md-content a:not(.md-button):not(.md-logo):not(.md-nav__link):not(.md-tabs__link) {
   color: var(--md-accent-fg-color);
   text-decoration: none;
