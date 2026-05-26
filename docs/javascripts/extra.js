@@ -62,20 +62,29 @@
       svg.setAttribute('height', '24');
       svg.setAttribute('data-custom-logo', '');
 
-      const waves = [
-        'M 3,8.5 C 4.5,6 6.5,5.5 8,7.5 C 9.5,9.5 11,10.5 13,8.5 C 15,6 17,5 19,7 C 21,9 23,10.5 25,8.5 C 26,7 27,7.5 27,8.5',
-        'M 5,16 C 6.5,14 8,13.5 9.5,15.5 C 11,17.5 13,18.5 15,16 C 16.5,14 18,13 19.5,15.5 C 21,18 22.5,18.5 25,16',
-        'M 3,23 C 4.5,21 6,20.5 7.5,22.5 C 9.5,24.5 11,25 13,22.5 C 14.5,20.5 16,20 18,22.5 C 19.5,24.5 21,25 24,23',
+      // Blocky bars (pi.dev style — geometric, no curves)
+      const bars = [
+        { x:'3', y:'6', w:'24', h:'5' },
+        { x:'5', y:'13.5', w:'20', h:'5' },
+        { x:'3', y:'21', w:'22', h:'5' },
       ];
-      waves.forEach(d => {
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', d);
-        path.setAttribute('stroke', gold);
-        path.setAttribute('stroke-width', '4');
-        path.setAttribute('stroke-linecap', 'round');
-        path.setAttribute('fill', 'none');
-        svg.appendChild(path);
+      bars.forEach(({ x, y, w, h }) => {
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', x);
+        rect.setAttribute('y', y);
+        rect.setAttribute('width', w);
+        rect.setAttribute('height', h);
+        rect.setAttribute('fill', gold);
+        svg.appendChild(rect);
       });
+      // Square dot
+      const dot = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      dot.setAttribute('x', '26');
+      dot.setAttribute('y', '23');
+      dot.setAttribute('width', '4');
+      dot.setAttribute('height', '4');
+      dot.setAttribute('fill', gold);
+      svg.appendChild(dot);
       logo.appendChild(svg);
     });
   }
