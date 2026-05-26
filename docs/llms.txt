@@ -1,0 +1,25 @@
+# lllm.dev
+
+> News on local LLMs. Covering models, tools, and the open-source AI ecosystem.
+
+## News
+
+- [Llama 4 just dropped — and it runs on a laptop](https://lllm.dev/news/llama-4-laptop/): Meta's Llama 4 8B runs on consumer laptops. 128K context, multimodal, Apache 2.0.
+- [Ollama 1.0 is here](https://lllm.dev/news/ollama-1.0/): Multi-GPU support, model caching, streaming SSE with per-token metadata.
+- [MLX for text: Apple's secret weapon for local AI](https://lllm.dev/news/mlx-text/): Apple's MLX framework now has first-class text generation. 20–30% faster than llama.cpp on Apple Silicon.
+- [DwarfStar 4: antirez ships a dedicated DeepSeek V4 Flash engine](https://lllm.dev/news/dwarfstar-4/): 284B MoE on a MacBook. KV cache on disk, 1M context.
+- [llama.cpp gets Vulkan backend](https://lllm.dev/news/llamacpp-vulkan/): One backend for every GPU — NVIDIA, AMD, Intel, mobile.
+- [llmfit: one command to find what model runs on your hardware](https://lllm.dev/news/llmfit/): Auto-detects GPU, RAM, CPU. Scores every model for your machine.
+
+## Guides
+
+- [Getting Started](https://lllm.dev/guides/getting-started/): Setup and first run
+- [Running Models](https://lllm.dev/guides/running-models/): Configuration and optimization
+- [Hardware](https://lllm.dev/guides/hardware/): GPU and system requirements
+- [Fine-Tuning](https://lllm.dev/guides/fine-tuning/): Customizing models
+
+## Pages
+
+- [About](https://lllm.dev/about/): Project background and philosophy
+- [Tools](https://lllm.dev/tools/): Curated list of local LLM tools
+- [All News](https://lllm.dev/news/): Full news archive
