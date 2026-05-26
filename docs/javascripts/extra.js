@@ -60,29 +60,20 @@
       svg.setAttribute('height', '24');
       svg.setAttribute('data-custom-logo', '');
 
-      // Single coordinate system with M chart line
+      // Single coordinate system — just axes
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       g.setAttribute('stroke', gold);
       g.setAttribute('stroke-width', '1');
       g.setAttribute('fill', 'none');
 
-      // Y-axis
       const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
       yAxis.setAttribute('x1', '3'); yAxis.setAttribute('y1', '8');
       yAxis.setAttribute('x2', '3'); yAxis.setAttribute('y2', '26');
       g.appendChild(yAxis);
-      // X-axis
       const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
       xAxis.setAttribute('x1', '3'); xAxis.setAttribute('y1', '26');
       xAxis.setAttribute('x2', '29'); xAxis.setAttribute('y2', '26');
       g.appendChild(xAxis);
-      // Ticks
-      [6,9,12,15,18,21,24].forEach(t => {
-        const tick = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        tick.setAttribute('x1', t); tick.setAttribute('y1', '25');
-        tick.setAttribute('x2', t); tick.setAttribute('y2', '27');
-        g.appendChild(tick);
-      });
       svg.appendChild(g);
 
       // M chart line
