@@ -128,6 +128,22 @@
   border-radius: 0 !important;
 }
 
+/* Dialogs, modals, search results */
+.md-dialog,
+.md-dialog *,
+.md-search-result__inner,
+.md-search-result__inner *,
+.md-overlay,
+.md-overlay *,
+dialog,
+dialog *,
+dialog::backdrop,
+[role="dialog"],
+[role="dialog"] *,
+.md-clipboard {
+  border-radius: 0 !important;
+}
+
 /* ═══════════════════════════════════════════════════════
    Typography
    ═══════════════════════════════════════════════════════ */
