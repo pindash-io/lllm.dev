@@ -1,5 +1,5 @@
 ---
-icon: lucide/history
+icon: lucide/radio
 ---
 
 # All News

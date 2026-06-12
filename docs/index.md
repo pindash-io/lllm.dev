@@ -1,5 +1,5 @@
 ---
-icon: lucide/newspaper
+icon: lucide/orbit
 hide:
   - toc
 ---

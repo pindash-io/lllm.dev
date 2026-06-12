@@ -66,7 +66,7 @@ features = [
 ]
 
 [project.theme.icon]
-logo = "lucide/newspaper"
+logo = "lucide/orbit"
 
 [project.theme.font]
 text = "Inter"
@@ -74,15 +74,15 @@ code = "JetBrains Mono"
 
 [[project.theme.palette]]
 scheme = "slate"
-primary = "indigo"
-accent = "indigo"
+primary = "blue-grey"
+accent = "cyan"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to light mode"
 
 [[project.theme.palette]]
 scheme = "default"
-primary = "indigo"
-accent = "indigo"
+primary = "blue"
+accent = "cyan"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to dark mode"
 

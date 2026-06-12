@@ -1,5 +1,5 @@
 ---
-icon: lucide/info
+icon: lucide/satellite
 hide:
   - toc
 ---

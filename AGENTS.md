@@ -63,6 +63,6 @@ Grid cards need **4-space indentation** for continuation content (title, descrip
 Use **Jujutsu** (`jj`), not raw `git`:
 
 ```bash
-jj commit -m "type(scope): summary"   # feat, fix, docs, chore, refactor
+jj commit -m "scope: summary"   # e.g. api, theme, build, deps
 jj git push
 ```
