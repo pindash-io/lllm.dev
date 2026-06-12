@@ -711,6 +711,16 @@ body {
   color: var(--md-default-fg-color--lighter) !important;
 }
 
+/* Search button */
+.md-search__button {
+  color: var(--md-default-fg-color--light);
+}
+
+.md-search__button:hover {
+  color: var(--md-default-fg-color);
+  background: var(--mono-ink-dim);
+}
+
 /* ═══════════════════════════════════════════════════════
    Footer
    ═══════════════════════════════════════════════════════ */
