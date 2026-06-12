@@ -11,8 +11,8 @@
    ═══════════════════════════════════════════════════════ */
 
 :root {
-  --mono-radius:     6px;
-  --mono-radius-lg:  8px;
+  --mono-radius:     0;
+  --mono-radius-lg:  0;
   --mono-transition: 0.2s ease;
 }
 
@@ -710,7 +710,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--mono-border-bright);
-  border-radius: 3px;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
