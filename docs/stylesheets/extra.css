@@ -449,7 +449,7 @@ body {
 .md-typeset .grid.cards > ul > li {
   border: 1px solid var(--mono-border);
   border-radius: var(--mono-radius);
-  padding: 1.5rem 1.75rem;
+  padding: 1rem 1.25rem;
   background: var(--mono-surface);
   transition: border-color var(--mono-transition),
               background var(--mono-transition),
