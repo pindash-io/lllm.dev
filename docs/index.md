@@ -1,6 +1,7 @@
 ---
 icon: lucide/orbit
 hide:
+  - navigation
   - toc
 ---
 
