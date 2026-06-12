@@ -140,7 +140,10 @@ dialog *,
 dialog::backdrop,
 [role="dialog"],
 [role="dialog"] *,
-.md-clipboard {
+.md-clipboard,
+/* Any fixed overlay — catch dynamically created divs */
+div[style*="position: fixed"],
+div[style*="position:fixed"] {
   border-radius: 0 !important;
 }
 
