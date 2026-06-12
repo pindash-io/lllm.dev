@@ -696,14 +696,14 @@ body {
   border: 1px solid var(--mono-border);
   border-radius: var(--mono-radius) !important;
   font-size: .8125rem;
-  background: var(--mono-surface);
+  background: var(--mono-surface-raised);
   transition: border-color var(--mono-transition),
               background var(--mono-transition);
 }
 
 .md-search__input:focus {
   border-color: var(--mono-border-bright);
-  background: var(--mono-surface-raised);
+  background: var(--mono-surface-overlay);
   box-shadow: none;
 }
 
